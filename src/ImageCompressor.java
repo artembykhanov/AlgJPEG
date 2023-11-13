@@ -6,6 +6,7 @@ import java.util.zip.GZIPOutputStream;
 import javax.imageio.ImageIO;
 
 public class ImageCompressor {
+    //ариф.код, виевлеты преор., jpeg 2000 стандарт, спектральные преобразование разновидности.
 
     // Размер блока, используемый для сжатия
     private static final int BLOCK_SIZE = 8;
@@ -25,7 +26,7 @@ public class ImageCompressor {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedImage inputImage = ImageIO.read(new File("input2.jpg"));
+        BufferedImage inputImage = ImageIO.read(new File("input.jpg"));
         // Преобразовать изображение в оттенки серого
         BufferedImage grayImage = new BufferedImage(
                 inputImage.getWidth(), inputImage.getHeight(),
