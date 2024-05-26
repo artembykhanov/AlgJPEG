@@ -1,9 +1,5 @@
-% Закрытие всех открытых окон
 close all;
 
-% Скрипт для демонстрации функций обработки изображений
-
-% Выбор изображения
 [filename, pathname] = uigetfile({'*.jpg;*.png;*.bmp;*.tif', 'All Image Files'});
 if isequal(filename, 0)
     disp('User selected Cancel');
@@ -13,10 +9,10 @@ else
     I = imread(fullpath);
 end
 
-% Отображение оригинального изображения
+
 figure, imshow(I), title('Original Image');
 
-% 3.1 Фильтры размытия и увеличения резкости
+%Фильтры размытия и увеличения резкости
 
 % Размытие (Gaussian Blur)
 I_blur = imgaussfilt(I, 2); % sigma = 2
@@ -26,7 +22,7 @@ figure, imshow(I_blur), title('Gaussian Blur');
 I_sharpen = imsharpen(I);
 figure, imshow(I_sharpen), title('Sharpened Image');
 
-% 3.2 Морфологические операции
+%Морфологические операции
 
 % Преобразование изображения в черно-белое
 I_bw = imbinarize(rgb2gray(I));
@@ -50,7 +46,7 @@ figure, imshow(I_open), title('Opened Image');
 I_close = imclose(I_bw, se);
 figure, imshow(I_close), title('Closed Image');
 
-% 3.3 Алгоритмы сегментации
+%Алгоритмы сегментации
 
 % Преобразование изображения в оттенки серого
 I_gray = rgb2gray(I);
